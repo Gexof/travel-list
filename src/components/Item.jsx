@@ -1,4 +1,4 @@
-function Item({ item }) {
+function Item({ item, onDeleteItem }) {
   return (
     <li
       className={`group flex items-center gap-3 rounded-2xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
@@ -26,7 +26,7 @@ function Item({ item }) {
       </span>
 
       <span
-        className={`min-w-0 flex-1 break-words font-medium ${
+        className={`min-w-0 flex-1 wrap-break-word font-medium ${
           item.packed ? "text-stone-400 line-through" : "text-stone-800"
         }`}
       >
@@ -37,6 +37,7 @@ function Item({ item }) {
         type="button"
         aria-label={`Remove ${item.description}`}
         className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-xl text-stone-400 transition hover:bg-red-50 hover:text-red-600"
+        onClick={() => onDeleteItem(item.id)}
       >
         ×
       </button>
