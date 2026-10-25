@@ -5,12 +5,17 @@ import Stats from "./components/Stats";
 
 function App() {
   return (
-    <div>
+    <main className="flex min-h-screen flex-col bg-stone-50 text-stone-800">
       <Header />
+
       <Form />
-      <PackingList />
+
+      <section className="flex flex-1 flex-col">
+        <PackingList />
+      </section>
+
       <Stats />
-    </div>
+    </main>
   );
 }
 
