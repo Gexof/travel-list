@@ -1,7 +1,4 @@
-function Stats() {
-  const totalItems = 3;
-  const packedItems = 1;
-
+function Stats({ totalItems, packedItems }) {
   return (
     <footer className="bg-emerald-950 px-4 py-6 text-center text-white sm:px-6">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 sm:flex-row sm:justify-between">

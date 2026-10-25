@@ -1,4 +1,4 @@
-function Item({ item, onDeleteItem }) {
+function Item({ item, onDeleteItem, onToggleItem }) {
   return (
     <li
       className={`group flex items-center gap-3 rounded-2xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${
@@ -13,6 +13,8 @@ function Item({ item, onDeleteItem }) {
         readOnly
         aria-label={`Mark ${item.description} as packed`}
         className="h-5 w-5 shrink-0 cursor-pointer accent-emerald-700"
+        value={item.packed}
+        onChange={() => onToggleItem(item.id)}
       />
 
       <span
