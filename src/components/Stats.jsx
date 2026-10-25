@@ -1,4 +1,7 @@
-function Stats({ totalItems, packedItems }) {
+function Stats({ items }) {
+  const totalItems = items.length;
+  const packedItems = items.filter((item) => item.packed).length;
+
   return (
     <footer className="bg-emerald-950 px-4 py-6 text-center text-white sm:px-6">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-3 sm:flex-row sm:justify-between">
@@ -7,7 +10,9 @@ function Stats({ totalItems, packedItems }) {
             ✈️
           </span>
           You have
-          <span className="font-bold text-orange-300">{totalItems} items</span>
+          <span className="font-bold text-orange-300">
+            {` ${totalItems} items `}
+          </span>
           on your list
         </p>
 

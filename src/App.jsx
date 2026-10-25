@@ -38,7 +38,7 @@ function App() {
         />
       </section>
 
-      <Stats />
+      <Stats items={items} />
     </main>
   );
 }
